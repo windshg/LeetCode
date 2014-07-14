@@ -23,7 +23,7 @@ Every recursive solution could be converted to an iterative one deliberately con
 * Run the logic in function.
 * clean stack.
 * Jump back to caller's space.
-* 
+
 Overtly stack is the key point. If you want a conversion from recursion to iteration, stack will be the primitive bridge promising and non-tricky by which it's easy to figure a way out. Necessary is it to make such a conversion in case of large scale. Recursion is easier to come up with and more readable than iteration while correspondingly it would lay higher claim to memory. Local variables would be stacked over and over during the recursive function call until the whole invoke finishes or stack overflows to crash. Problem solved when you use heap-allocated stack from STL. Anyway, each way has its merit and is needed in some specific case. You have better grasp both of them.
 
 The widespread use of stack as a LIFO associative container is not limited in just being a conversion bridge. When you try using stack to store some extra information for your solution, at first you may consider having elements in your target data set stored in it. However, if you find any of your ideas in which individual's value doesn't make a difference. It's time for you to store something else instead of the raw value. You may take a try to store the frequency of occurrence of elements visited or anything else meaningful.
