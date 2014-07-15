@@ -1,9 +1,10 @@
 LeetCode
 ========
-LeetCode is a cool platform for practicing programming as problems described here is kind of fundamental compared to ones in CodeForce, POJ, etc and the user experience is excellent in contrast. Even as a rookie on algorithm design as I am, I could take it down without too much effort in the first place. Obviously I was semi-right, or say, 30%-right since the final goal is to get improvement instead of just solutions accepted.
+###Foreword
+LeetCode is a cool platform for practicing programming as problems described here are rudimental properly compared to ones in CodeForce, POJ, etc and the user experience is excellent in contrast. Even as a rookie on algorithm design as I am, I could take it down without too much effort in the first place as I thought. Obviously I was semi-right, or say, 30%-right since the final goal is to get improvement, not just to get problems solved.
 
 The deduction of solution is more important than the solution itself especially when you work it out for self-improvement. The solution to problem in a small scale is always easy to come up with, say, brute force, while it's bloody difficult in large scale.  TLE, Stack Overflow, etc, pop up in your way to be Accepted. Complexity of time and space is the critical concept in algorithm design which you should always keep in your mind. Think in large scale.
-
+###Retrospect
 Sometimes the most straight-forward solutions to some questions are incredibly simple. For example, "Binary Tree Postorder Traversal". A brain-dead recursion may actually be accepted. Cost of time is O(n). Good!!! Cost of space is O(n). Acceptable!!! ... Come on, don't be such a baby. If so, you can't get any improvement after solving this "stupid" question. Try an iterative way with the same complexity of both time and space. Then try a new way with just O(1) space known as “Morris Traversal”...
 
 Whenever you meet a linked-list-related problem, dummy head should be come up in your mind in conditioned response. It's so helpful to have a "useless" node pointing to the real head that you can find out some solutions accidentally at times and make your code more tidy empirically. Of course it's unnecessary to add such an extra character in some situation (say, traveling a linked list, maximum node in a linked list, whatever).
@@ -24,10 +25,12 @@ Every recursive solution could be converted to an iterative one deliberately con
 * clean stack.
 * Jump back to caller's space.
 
-Overtly stack is the key point. If you want a conversion from recursion to iteration, stack will be the primitive bridge promising and non-tricky by which it's easy to figure a way out. Necessary is it to make such a conversion in case of large scale. Recursion is easier to come up with and more readable than iteration while correspondingly it would lay higher claim to memory. Local variables would be stacked over and over during the recursive function call until the whole invoke finishes or stack overflows to crash. Problem solved when you use heap-allocated stack from STL. Anyway, each way has its merit and is needed in some specific case. You have better grasp both of them.
+Overtly stack is the key point. If you want a conversion from recursion to iteration, stack will be the primitive bridge promising and non-tricky by which it's easy to figure a way out. Necessary is it to make such a conversion in case of large scale. Recursion is easier to come up with and more readable than iteration while correspondingly it would lay higher claim to memory. Local variables would be stacked over and over during the recursive call until the whole invoke finishes or stack overflows to crash. Problem solved when you use heap-allocated stack from STL. Anyway, each way has its merit and is needed in specific case. You have better grasp both of them.
 
 The widespread use of stack as a LIFO associative container is not limited in just being a conversion bridge. When you try using stack to store some extra information for your solution, at first you may consider having elements in your target data set stored in it. However, if you find any of your ideas in which individual's value doesn't make a difference. It's time for you to store something else instead of the raw value. You may take a try to store the frequency of occurrence of elements visited or anything else meaningful.
-
-Life is not easy, especially for coder. Long may you code.
+###Summary
+A problem is there, a solution is there.
+Life is not easy, especially for coder. 
+Long may you code...
 
 
