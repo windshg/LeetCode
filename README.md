@@ -1,7 +1,7 @@
 LeetCode
 ========
 ###Foreword
-LeetCode is a cool platform for practicing programming as problems described here are rudimental properly compared to ones in CodeForce, POJ, etc and the user experience is excellent in contrast. Even as a rookie on algorithm design as I am, I could take it down without too much effort in the first place as I thought. Obviously I was semi-right, or say, 30%-right since the final goal is to get improvement, not just to get problems solved.
+LeetCode is a cool platform for practicing programming as problems described here are rudimental properly compared to ones in CodeForce, POJ, etc and the user experience is excellent in contrast.
 
 The deduction of solution is more important than the solution itself especially when you work it out for self-improvement. The solution to problem in a small scale is always easy to come up with, say, brute force, while it's bloody difficult in large scale.  TLE, Stack Overflow, etc, pop up in your way to be Accepted. Complexity of time and space is the critical concept in algorithm design which you should always keep in your mind. Think in large scale.
 ###Retrospect
