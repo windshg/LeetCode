@@ -126,3 +126,69 @@ public:
         return dh.next;
     }
 };
+
+// n * O(logn)
+class Solution {
+public:
+    ListNode* sortList(ListNode* head) {
+        int len = 0;
+        for (ListNode* p = head; p != nullptr; p = p->next) len ++;
+        if (len < 2) return head;
+
+        ListNode dh(0);
+        dh.next = head;
+        
+        int skip = 1;        
+        while (skip < len) {
+            ListNode* pre = &dh;
+            ListNode* h1 = pre->next;
+            ListNode* h2 = h1;
+            while (h2) {
+                int s = 0;
+                while (h2 && (++s) <= skip) h2 = h2->next;
+                ListNode* end = h2;
+                s = 0;
+                while (end && (++s) <= skip) end = end->next;
+                pre = merge(pre, h1, h2, end);
+                h1 = pre->next;
+                h2 = h1;
+            }
+            skip *= 2;
+        }
+        
+        return dh.next;
+    }
+
+    void print(ListNode* head) {
+        ListNode* p = head;
+        while (p) {
+            cout << p->val << "->";
+            p = p->next;
+        }
+        cout << "null" << endl;
+    }
+
+    ListNode* merge(ListNode* pre, ListNode* h1, ListNode* h2, ListNode* end) {
+        ListNode* pre1 = pre;
+        ListNode* p1 = h1;
+        ListNode* pre2 = h1;
+        while (pre2->next != h2) pre2 = pre2->next;
+        ListNode* p2 = h2;
+
+        while (p1 != p2 && p2 != end) {
+            if (p1->val < p2->val) {
+                p1 = p1->next;
+            } else {
+                pre2->next = p2->next;
+                p2->next = p1;
+                pre1->next = p2;
+                p2 = pre2->next;
+            }
+            pre1 = pre1->next;
+        }
+
+        while (pre2->next != end) pre2 = pre2->next;
+
+        return pre2;
+    }
+};
