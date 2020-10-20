@@ -1,17 +1,11 @@
 class Solution {
 public:
     int reverse(int x) {
-        int sign = 1;
-        if (x < 0) {
-            sign = -1;
-            x = abs(x);
+        long n = 0;
+        while(x != 0) {
+            n = n*10 + x%10;
+            x = x/10;
         }
-        int ret = 0;
-        while (x) {
-            ret *= 10;
-            ret += x % 10;
-            x /= 10;
-        }
-        return ret * sign;
+        return (int)n==n? (int)n:0;
     }
 };
