@@ -13,33 +13,18 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode dh;
         ListNode* pre = &dh;
-        
         int ac = 0;
-        while (l1 && l2) {
-            int sum = l1->val + l2->val + ac;
+        while (l1 || l2 || ac > 0) {
+            int sum = ac;
+            if (l1) sum += l1->val;
+            if (l2) sum += l2->val;
             ListNode* n = new ListNode(sum % 10, nullptr);
             ac = sum / 10;
             pre->next = n;
             pre = pre->next;
-            l1 = l1->next;
-            l2 = l2->next;
+            if (l1) l1 = l1->next;
+            if (l2) l2 = l2->next;
         }
-        
-        ListNode* l = l1;
-        if (l2) l = l2;
-
-        while (l) {
-            int sum = l->val + ac;
-            ListNode* n = new ListNode;
-            n->val = sum % 10;
-            ac = sum / 10;
-            pre->next = n;
-            pre = pre->next;
-            l = l->next;
-        }
-
-        if (ac > 0) pre->next = new ListNode(ac, nullptr);
-
         return dh.next;
     }
 };
